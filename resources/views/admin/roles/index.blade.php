@@ -2,6 +2,15 @@
     @section('content')
 
         <h1>Roles</h1>
+<div class="row">
+
+        @if(session()->has('role-delete'))
+            <div class="alert alert-danger">
+                {{session('role-delete')}}
+            </div>
+        @endif
+
+</div>
 
         <div class="row">
 
@@ -40,6 +49,7 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Slug</th>
+                        <th>Delete</th>
 
 
                     </tr>
@@ -49,7 +59,7 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Slug</th>
-
+                        <th>Delete</th>
 
                     </tr>
                     </tfoot>
@@ -61,6 +71,14 @@
                             <td>{{$role->id}}</td>
                             <td>{{$role->name}}</td>
                             <td>{{$role->slug}}</td>
+                            <td>
+                                <form method="post" action="{{route('roles.destroy', $role->id)}}">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
 
 
                         </tr>
