@@ -3,8 +3,7 @@
     @section('content')
 
 
-        <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
+        <h1 class="my-4">Posts about the latest conferences
         </h1>
 
         <!-- Blog Post -->

@@ -9,6 +9,7 @@
        <div class="alert alert-success"> {{session('role-updated')}} </div>
         @endif
 
+
         <div class="col-sm-6">
 
             <form method="post" action="{{route('roles.update', $role->id)}}">
